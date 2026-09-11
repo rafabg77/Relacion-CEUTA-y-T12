@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Guía de estudio de extranjería aplicada a la crisis de Ceuta de 2026 para Escala Básica de Policía Nacional.">
+  <title>Ceuta 2026 Extranjería Guía de estudio</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #5c677c;
+      --paper: #f6f7fb;
+      --surface: #ffffff;
+      --line: #dce1eb;
+      --navy: #102a55;
+      --blue: #1f63d0;
+      --pale-blue: #eaf2ff;
+      --green: #16734a;
+      --pale-green: #e9f7ee;
+      --amber: #8d5a08;
+      --pale-amber: #fff6df;
+      --red: #ad2431;
+      --pale-red: #fff0f1;
+      --shadow: 0 8px 28px rgba(20, 36, 68, .08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #eef3ff;
+        --muted: #b3bed1;
+        --paper: #0d1422;
+        --surface: #161f30;
+        --line: #354157;
+        --navy: #9fc3ff;
+        --blue: #75a8ff;
+        --pale-blue: #172d50;
+        --green: #77d7a8;
+        --pale-green: #143f31;
+        --amber: #ffd17d;
+        --pale-amber: #4b3512;
+        --red: #ff9ca6;
+        --pale-red: #4e2029;
+        --shadow: 0 8px 28px rgba(0, 0, 0, .22);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.58 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: var(--blue); }
+    a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+    .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    .hero {
+      color: white;
+      background: radial-gradient(circle at 88% 18%, #326cbf 0, transparent 32%), linear-gradient(132deg, #071a38, #164477);
+      padding: 62px 0 46px;
+    }
+    .eyebrow { margin: 0 0 10px; color: #c4d9fb; font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1, h2, h3 { line-height: 1.18; color: inherit; }
+    h1 { max-width: 850px; margin: 0; font-size: clamp(2rem, 5vw, 3.65rem); letter-spacing: -.04em; }
+    .subtitle { max-width: 790px; margin: 16px 0 0; font-size: clamp(1rem, 2vw, 1.18rem); color: #e1ecff; }
+    .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 32px; }
+    .fact { padding: 15px 16px; border: 1px solid rgba(255,255,255,.24); border-radius: 12px; background: rgba(255,255,255,.09); }
+    .fact b { display:block; font-size: 1.25rem; }
+    .fact span { font-size: .82rem; color: #d8e7ff; }
+    .studybar { position: sticky; top: 0; z-index: 3; background: color-mix(in srgb, var(--surface) 94%, transparent); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+    .studybar .wrap { display: flex; align-items: center; gap: 18px; min-height: 58px; }
+    .brand { font-size: .88rem; font-weight: 800; white-space: nowrap; color: var(--navy); }
+    .nav { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: thin; }
+    .nav a { padding: 7px 10px; border-radius: 8px; color: var(--muted); text-decoration: none; white-space: nowrap; font-size: .85rem; font-weight: 650; }
+    .nav a:hover { background: var(--pale-blue); color: var(--blue); }
+    main { padding: 30px 0 72px; }
+    .layout { display: grid; grid-template-columns: minmax(0, 1fr) 290px; gap: 30px; align-items: start; }
+    .content { min-width: 0; }
+    section { scroll-margin-top: 80px; margin: 0 0 44px; }
+    .section-label { display: inline-flex; align-items: center; min-height: 26px; padding: 2px 9px; border-radius: 99px; background: var(--pale-blue); color: var(--blue); font-size: .75rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
+    h2 { margin: 10px 0 12px; color: var(--navy); font-size: clamp(1.45rem, 3vw, 2rem); letter-spacing: -.025em; }
+    h3 { margin: 24px 0 8px; color: var(--navy); font-size: 1.12rem; }
+    p { margin: 8px 0 14px; }
+    .lead { font-size: 1.05rem; }
+    .panel { margin: 18px 0; padding: 19px 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); box-shadow: var(--shadow); }
+    .panel h3 { margin-top: 0; }
+    .rule { margin: 26px 0; border: 0; border-top: 1px solid var(--line); }
+    .notice { margin: 18px 0; padding: 15px 17px; border-left: 4px solid var(--blue); border-radius: 4px 11px 11px 4px; background: var(--pale-blue); }
+    .notice strong { color: var(--navy); }
+    .warning { border-left-color: var(--amber); background: var(--pale-amber); }
+    .warning strong { color: var(--amber); }
+    .danger { border-left-color: var(--red); background: var(--pale-red); }
+    .danger strong { color: var(--red); }
+    .success { border-left-color: var(--green); background: var(--pale-green); }
+    .success strong { color: var(--green); }
+    .steps { list-style: none; padding: 0; margin: 18px 0; counter-reset: step; }
+    .steps li { position: relative; min-height: 48px; margin: 0 0 12px; padding: 10px 10px 10px 61px; border-radius: 12px; background: var(--surface); border: 1px solid var(--line); }
+    .steps li::before { counter-increment: step; content: counter(step); position: absolute; left: 14px; top: 11px; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; color: white; background: var(--blue); font-weight: 800; }
+    ul, ol { padding-left: 23px; }
+    li { margin: 6px 0; }
+    .table-wrap { overflow-x: auto; margin: 18px 0; }
+    table { width: 100%; border-collapse: collapse; background: var(--surface); font-size: .93rem; }
+    th, td { padding: 13px 14px; vertical-align: top; text-align: left; border-bottom: 1px solid var(--line); }
+    th { color: white; background: var(--navy); font-size: .8rem; letter-spacing: .03em; }
+    td:first-child { font-weight: 750; color: var(--navy); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+    .chip { padding: 4px 10px; border-radius: 999px; background: var(--pale-blue); color: var(--blue); font-size: .8rem; font-weight: 700; }
+    details { margin: 11px 0; border: 1px solid var(--line); border-radius: 11px; background: var(--surface); }
+    details[open] { box-shadow: var(--shadow); }
+    summary { padding: 13px 15px; cursor: pointer; color: var(--navy); font-weight: 750; }
+    details > div { padding: 0 15px 15px; }
+    aside { position: sticky; top: 82px; }
+    .aside-card { padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); box-shadow: var(--shadow); }
+    .aside-card + .aside-card { margin-top: 15px; }
+    .aside-card h3 { margin: 0 0 10px; font-size: 1rem; }
+    .checklist { padding: 0; list-style: none; }
+    .checklist li { display: flex; gap: 9px; align-items: flex-start; margin: 10px 0; }
+    .checklist input { margin-top: 4px; accent-color: var(--blue); }
+    .progress-track { height: 9px; overflow: hidden; border-radius: 99px; background: var(--line); }
+    .progress-bar { width: 0; height: 100%; border-radius: inherit; background: var(--blue); transition: width .2s ease; }
+    .progress-text { display: block; margin-top: 8px; color: var(--muted); font-size: .82rem; }
+    .reset { width:100%; margin-top: 12px; padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: transparent; cursor: pointer; font: inherit; font-size: .85rem; }
+    .reset:hover { border-color: var(--blue); color: var(--blue); }
+    .quiz { margin-top: 16px; }
+    .question { margin: 16px 0; padding: 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+    .question p { margin-top: 0; font-weight: 750; color: var(--navy); }
+    .answers { display: grid; gap: 8px; }
+    .answers button { padding: 10px 12px; text-align: left; border: 1px solid var(--line); border-radius: 8px; background: transparent; color: var(--ink); cursor: pointer; font: inherit; }
+    .answers button:hover:not([disabled]) { border-color: var(--blue); background: var(--pale-blue); }
+    .answers button.correct { border-color: var(--green); background: var(--pale-green); color: var(--green); font-weight: 700; }
+    .answers button.incorrect { border-color: var(--red); background: var(--pale-red); color: var(--red); }
+    .feedback { display: none; margin: 12px 0 0; padding: 11px 12px; border-radius: 8px; background: var(--pale-blue); }
+    .feedback.show { display:block; }
+    .source-list { padding-left: 19px; }
+    footer { padding: 25px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: .86rem; }
+    @media (max-width: 930px) { .layout { grid-template-columns: 1fr; } aside { position: static; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; } .aside-card + .aside-card { margin-top: 0; } }
+    @media (max-width: 680px) { .hero { padding-top: 44px; } .facts { grid-template-columns: repeat(2, 1fr); } .studybar .wrap { gap: 10px; } .brand { display:none; } aside { grid-template-columns: 1fr; } th,td { padding: 10px; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Escala Básica Policía Nacional · Temas 10, 11 y 12</p>
+      <h1>Ceuta 2026: la teoría de extranjería que debes dominar</h1>
+      <p class="subtitle">Guía de estudio aplicada a la entrada masiva de los días 30 y 31 de julio de 2026. No estudies titulares: estudia la figura jurídica, el procedimiento, las garantías y el órgano competente.</p>
+      <div class="facts" aria-label="Datos de referencia del caso">
+        <div class="fact"><b>30–31 julio</b><span>Entrada masiva</span></div>
+        <div class="fact"><b>STS 814/2026</b><span>Nado: devolución</span></div>
+        <div class="fact"><b>RD 681/2026</b><span>25 de agosto</span></div>
+        <div class="fact"><b>31 diciembre</b><span>Fin previsto de la situación</span></div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="studybar" aria-label="Navegación de la guía">
+    <div class="wrap">
+      <span class="brand">GUÍA CEUTA</span>
+      <div class="nav">
+        <a href="#prioridad">Prioridad</a>
+        <a href="#figuras">Figuras jurídicas</a>
+        <a href="#garantias">Garantías y CIE</a>
+        <a href="#asilo">Asilo</a>
+        <a href="#menores">Menores</a>
+        <a href="#seguridad">Seguridad nacional</a>
+        <a href="#competencias">Competencias</a>
+        <a href="#test">Test</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <div class="layout">
+      <div class="content">
+        <section id="prioridad">
+          <span class="section-label">Qué estudiar primero</span>
+          <h2>El caso no crea una ley nueva: activa las reglas que ya tienes en el temario</h2>
+          <p class="lead">Para una pregunta sobre Ceuta, la respuesta correcta casi siempre depende de distinguir <strong>rechazo en frontera, devolución, expulsión y denegación de entrada</strong>. Después entran las garantías de asilo, la protección del menor y la coordinación operativa.</p>
+          <div class="panel">
+            <h3>Reparto práctico del repaso</h3>
+            <div class="chips"><span class="chip">Tema 11 · 45 %</span><span class="chip">Tema 12 · 35 %</span><span class="chip">Tema 10 · 20 %</span></div>
+            <ul>
+              <li><strong>Tema 11:</strong> devolución, expulsión, procedimiento preferente, medidas cautelares y CIE.</li>
+              <li><strong>Tema 12:</strong> solicitud de protección internacional en frontera, reexamen, personas vulnerables y menores.</li>
+              <li><strong>Tema 10:</strong> entrada por puesto habilitado, garantías jurídicas, régimen general y MENA.</li>
+            </ul>
+          </div>
+          <div class="notice warning"><strong>Filtro inicial:</strong> la mayor parte de quienes protagonizaron el suceso eran nacionales de terceros Estados. Por ello se aplica el <strong>régimen general de la LOEX</strong>, no el régimen comunitario del RD 240/2007. El bloque de ciudadanos UE solo sirve para no confundir regímenes.</div>
+        </section>
+
+        <section id="figuras">
+          <span class="section-label">Tema 11 · Núcleo del caso</span>
+          <h2>Las cuatro figuras que no puedes confundir</h2>
+          <p>Aprende cada una con cuatro preguntas: <strong>cuándo se aplica, quién la acuerda, si necesita expediente de expulsión y qué consecuencia tiene</strong>.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Figura</th><th>Supuesto</th><th>Regla decisiva</th><th>Relación con Ceuta</th></tr></thead>
+              <tbody>
+                <tr><td>Denegación de entrada</td><td>Persona que llega a un puesto fronterizo habilitado y no reúne requisitos de entrada.</td><td>Resolución motivada; informa de recursos, asistencia letrada e intérprete. Debe regresar al punto de origen en el plazo más breve posible.</td><td>No describe, con carácter general, a quien ya ha entrado irregularmente en territorio español.</td></tr>
+                <tr><td>Rechazo en frontera</td><td>Exclusivo de Ceuta y Melilla: persona detectada en la línea fronteriza mientras supera elementos materiales de contención.</td><td>DA 10.ª LOEX. Respeto obligado de derechos humanos y protección internacional.</td><td>No es aplicable a la interceptación en el mar de quien entra a nado.</td></tr>
+                <tr><td>Devolución</td><td>Quien pretende entrar irregularmente o quebranta una prohibición de entrada tras expulsión.</td><td>Art. 58.3 LOEX y art. 23 RD 1155/2024. No requiere expediente de expulsión, pero se acuerda mediante resolución de la autoridad gubernativa competente.</td><td>La STS 814/2026 encuadra aquí la entrada a nado interceptada en el mar.</td></tr>
+                <tr><td>Expulsión</td><td>Sanción sustitutiva de multa en ciertos supuestos de infracción grave o muy grave.</td><td>Requiere expediente administrativo, resolución motivada y principio de proporcionalidad.</td><td>No equivale a un retorno inmediato por la sola entrada irregular.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="notice"><strong>Regla de memoria:</strong> <em>puesto habilitado = denegación; línea de valla = posible rechazo; mar/nado = devolución; permanencia irregular posterior = posible expulsión mediante expediente.</em></div>
+          <h3>La STS 814/2026: por qué es tan examinable</h3>
+          <p>La sentencia del Tribunal Supremo de 29 de junio de 2026 fija que no cabe usar el rechazo en frontera respecto de personas interceptadas en el mar intentando llegar a nado a Ceuta o Melilla. La razón jurídica es que no han superado un <strong>elemento material de contención fronteriza</strong>. La consecuencia no es que no puedan ser retornadas: la vía correcta es la <strong>devolución</strong>.</p>
+          <div class="notice danger"><strong>Trampa:</strong> “La sentencia prohíbe devolver a toda persona que llegue a nado.” Es falso. Lo que prohíbe es aplicar el mecanismo de rechazo en frontera a ese supuesto.</div>
+          <details>
+            <summary>Artículos que debes asociar a cada respuesta</summary>
+            <div><ul><li>LOEX art. 25: requisitos de entrada.</li><li>LOEX art. 26: denegación de entrada.</li><li>LOEX art. 53.1.a): situación irregular como infracción grave.</li><li>LOEX art. 57: expulsión.</li><li>LOEX art. 58.3: devolución.</li><li>LOEX DA 10.ª: régimen especial de Ceuta y Melilla.</li><li>RD 1155/2024, art. 23: devoluciones.</li></ul></div>
+          </details>
+        </section>
+
+        <section id="garantias">
+          <span class="section-label">Tema 10 y Tema 11</span>
+          <h2>Garantías, procedimiento y CIE</h2>
+          <p>La entrada irregular no elimina las garantías jurídicas. En materia de extranjería, las resoluciones son recurribles y la persona extranjera tiene derecho a asistencia letrada e intérprete en los procedimientos de denegación de entrada, devolución, expulsión y protección internacional cuando carezca de recursos.</p>
+          <div class="panel">
+            <h3>Expulsión administrativa por infracción LOEX</h3>
+            <ul>
+              <li>La expulsión no puede imponerse conjuntamente con multa.</li>
+              <li>Puede sustituir la multa por proporcionalidad para las infracciones muy graves y las graves legalmente previstas.</li>
+              <li>El procedimiento <strong>preferente</strong> se usa, entre otros, si existe riesgo de incomparecencia, obstaculización de la expulsión o riesgo para orden público, seguridad pública o seguridad nacional.</li>
+              <li>En procedimiento preferente, la ejecución puede ser inmediata; en el ordinario se concede, con carácter general, un plazo de salida voluntaria de 7 a 30 días.</li>
+              <li>La expulsión normalmente conlleva prohibición de entrada, hasta 5 años; excepcionalmente hasta 10 ante amenaza grave.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Medidas cautelares y CIE</h3>
+            <ul>
+              <li>Medidas: presentación periódica, residencia obligatoria, retirada del pasaporte, detención cautelar e internamiento preventivo judicial.</li>
+              <li>El CIE no es una pena ni una prisión. Es una medida cautelar para asegurar la expulsión o devolución.</li>
+              <li>La detención gubernativa no puede exceder de <strong>72 horas</strong> antes de solicitar internamiento.</li>
+              <li>El internamiento exige auto motivado del Juez de Instrucción, con audiencia del interesado y del Ministerio Fiscal.</li>
+              <li>Duración máxima: <strong>60 días</strong>; finaliza antes si ya no concurren los presupuestos.</li>
+              <li>Los menores no ingresan en CIE; excepcionalmente pueden acompañar a sus progenitores en las condiciones legalmente previstas.</li>
+            </ul>
+          </div>
+          <div class="notice success"><strong>Aplicación Ceuta:</strong> el refuerzo de identificación y filiación permite diferenciar a adultos, menores, solicitantes de protección internacional, posibles víctimas y personas a las que pueda aplicarse la devolución. No hay una respuesta jurídica válida idéntica para todos.</div>
+        </section>
+
+        <section id="asilo">
+          <span class="section-label">Tema 12</span>
+          <h2>Protección internacional: la garantía que detiene la salida</h2>
+          <p>Asilo y protección subsidiaria no son sinónimos de entrada regular ni de autorización automática de residencia. Son mecanismos de protección individual que exigen estudiar el caso y sus motivos.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Concepto</th><th>Qué debes decir en examen</th></tr></thead>
+              <tbody>
+                <tr><td>Derecho de asilo</td><td>Protección dispensada a nacional no comunitario o apátrida a quien se reconoce la condición de refugiado.</td></tr>
+                <tr><td>Refugiado</td><td>Persona con fundados temores de persecución por raza, religión, nacionalidad, opiniones políticas, pertenencia a grupo social, género, orientación o identidad sexual.</td></tr>
+                <tr><td>Protección subsidiaria</td><td>Para quien no reúne requisitos de refugiado, pero afrontaría riesgo real de pena de muerte, tortura o trato inhumano/degradante, o amenaza grave por violencia indiscriminada en conflicto.</td></tr>
+                <tr><td>Non-refoulement</td><td>Prohíbe devolver a una persona a un territorio donde su vida o libertad peligren por los motivos protegidos.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Solicitud en frontera: plazos y derechos</h3>
+          <ol class="steps">
+            <li><strong>Se formaliza la solicitud.</strong> El solicitante tiene derecho a documentación, abogado e intérprete, atención sanitaria, comunicación con ACNUR y prestaciones específicas.</li>
+            <li><strong>Se paraliza la devolución.</strong> Si una persona en supuesto de devolución formaliza asilo, no puede ejecutarse la devolución hasta que se decida la inadmisión a trámite.</li>
+            <li><strong>Frontera:</strong> el Ministerio del Interior resuelve la admisión o denegación en un máximo de 4 días; puede ampliarse hasta 10 días si ACNUR lo solicita en los casos legalmente previstos.</li>
+            <li><strong>Reexamen:</strong> frente a inadmisión o denegación en frontera hay 2 días para solicitarlo y 2 días para resolverlo.</li>
+          </ol>
+          <div class="notice warning"><strong>Trampa:</strong> “Quien solicita asilo queda regularizado de modo definitivo.” Falso. Tiene derecho a permanecer mientras se tramita conforme a la Ley 12/2009, pero la solicitud puede ser inadmitida, denegada, concedida o archivada.</div>
+        </section>
+
+        <section id="menores">
+          <span class="section-label">Tema 10 y Tema 12</span>
+          <h2>Menores extranjeros no acompañados: protección e individualización</h2>
+          <p>Este es el segundo bloque más vinculado al caso. El concepto MENA incluye a la persona extranjera menor de 18 años que llega o se encuentra en España sin un adulto responsable de ella y en situación de desprotección.</p>
+          <ol class="steps">
+            <li><strong>Localización y atención inmediata.</strong> Si es claramente menor, se remite a los servicios de protección de menores y se informa al Ministerio Fiscal.</li>
+            <li><strong>Edad dudosa.</strong> Se informa inmediatamente a Fiscalía; las instituciones sanitarias colaboran con prioridad en las pruebas necesarias. Si la horquilla de edad sitúa su extremo inferior por debajo de 18 años, se le trata como menor.</li>
+            <li><strong>Registro.</strong> Reseña e inscripción en el Registro de Menores Extranjeros No Acompañados, con carácter general, dentro de 24 horas.</li>
+            <li><strong>Representación y protección.</strong> Se nombra representante y se asegura el interés superior del menor; si solicita asilo, se deriva a protección de menores y se comunica a Fiscalía.</li>
+            <li><strong>Repatriación individual.</strong> No es automática ni colectiva. Se abre expediente, se oye al menor, intervienen protección de menores y Ministerio Fiscal, y solo cabe si responde a su interés superior: reagrupación familiar o adecuada entrega a servicios de protección del país de origen.</li>
+            <li><strong>Residencia si no se repatria.</strong> Acreditada la imposibilidad de repatriación o, en todo caso, transcurridos 90 días desde su puesta a disposición de protección de menores, se inicia el procedimiento de autorización de residencia.</li>
+          </ol>
+          <h3>Contingencia migratoria extraordinaria de menores</h3>
+          <p>No confundas esta figura con la situación de interés para la Seguridad Nacional. La contingencia del artículo 35 bis LOEX se declara cuando el sistema de protección de una comunidad o ciudad autónoma supera <strong>tres veces</strong> su capacidad ordinaria. Permite distribuir menores entre comunidades y ciudades autónomas.</p>
+          <div class="notice"><strong>Plazos que debes memorizar:</strong> reseña e inscripción en el Registro MENA: <strong>24 horas</strong>. En contingencia, propuesta, resolución de ubicación y traslado: <strong>15 días naturales</strong> desde la inscripción. En el expediente ordinario de repatriación: máximo <strong>6 meses</strong> para resolver y notificar.</div>
+        </section>
+
+        <section id="seguridad">
+          <span class="section-label">Actualidad jurídica</span>
+          <h2>Situación de interés para la Seguridad Nacional</h2>
+          <p>Tras la crisis, el RD 681/2026 declaró esta situación en Ceuta. La pregunta de examen no debería ser política: debe responderse desde la Ley 36/2015.</p>
+          <div class="panel">
+            <h3>Definición y efectos</h3>
+            <ul>
+              <li>Existe cuando la gravedad, dimensión, urgencia y transversalidad de las medidas exigen coordinación reforzada de autoridades competentes bajo dirección del Gobierno.</li>
+              <li>La declara el Presidente del Gobierno mediante real decreto, previo informe del Consejo de Seguridad Nacional.</li>
+              <li>El real decreto debe definir crisis, ámbito geográfico, duración, posible prórroga, autoridad funcional y recursos necesarios.</li>
+              <li>Se afronta con <strong>poderes y medios ordinarios</strong> de las Administraciones Públicas.</li>
+              <li><strong>No suspende derechos fundamentales ni libertades públicas.</strong></li>
+              <li>La autoridad funcional coordina; no altera la titularidad de competencias ni las cadenas de mando legalmente establecidas.</li>
+            </ul>
+          </div>
+          <div class="notice danger"><strong>Trampa de terminología:</strong> no es estado de alarma, excepción ni sitio. Tampoco es la “emergencia de interés nacional” de protección civil. Son figuras distintas, con presupuestos y efectos diferentes.</div>
+        </section>
+
+        <section id="competencias">
+          <span class="section-label">Competencias policiales</span>
+          <h2>Quién hace qué en una crisis de frontera</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Órgano</th><th>Función que debes asociar</th></tr></thead>
+              <tbody>
+                <tr><td>Policía Nacional</td><td>Control de entrada y salida del territorio nacional de españoles y extranjeros; extranjería; identificación, reseñas y tramitación en puestos fronterizos.</td></tr>
+                <tr><td>Guardia Civil</td><td>Custodia de costas, fronteras, puertos y aeropuertos; vigilancia marítima y control de inmigración irregular en los espacios marítimos de su competencia.</td></tr>
+                <tr><td>Delegación/Subdelegación del Gobierno</td><td>Competencia en expedientes de extranjería y, conforme al supuesto, resolución de devolución o tramitación vinculada a menores.</td></tr>
+                <tr><td>Ministerio Fiscal</td><td>Intervención esencial en edad, tutela y repatriación de menores; vela por sus derechos e interés superior.</td></tr>
+                <tr><td>Juez de Instrucción</td><td>Autoriza el internamiento en CIE y controla judicialmente la medida; no decide libremente la política migratoria.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="notice"><strong>Recuerda:</strong> Policía Nacional y Guardia Civil cooperan. La atribución de una competencia principal no elimina la actuación coordinada de la otra fuerza en una crisis compleja.</div>
+        </section>
+
+        <section id="redes">
+          <span class="section-label">Conexión con investigación penal</span>
+          <h2>Redes, trata y favorecimiento de la inmigración ilegal</h2>
+          <p>La investigación del origen de la entrada masiva no permite dar por probada una autoría concreta mientras no exista resolución judicial. Para examen, lo importante es separar la responsabilidad de quien entra de la de quien organiza, promueve o se lucra.</p>
+          <ul>
+            <li>Inducir, promover, favorecer o facilitar, con ánimo de lucro y sin que constituya delito, la inmigración clandestina o la permanencia irregular es infracción <strong>muy grave</strong> del artículo 54.1.b) LOEX.</li>
+            <li>Si hay delito, puede entrar en juego el Código Penal; el tratamiento administrativo no sustituye a la investigación penal.</li>
+            <li>La posible víctima, perjudicado o testigo que coopere contra redes de trata, inmigración ilegal o explotación puede quedar exento de responsabilidad administrativa y acceder a retorno asistido o residencia y trabajo por circunstancias excepcionales.</li>
+            <li>Detectar vulnerabilidad o trata exige evitar automatismos: entrevista, identificación y protección son tan relevantes como el control fronterizo.</li>
+          </ul>
+        </section>
+
+        <section id="test">
+          <span class="section-label">Autoevaluación</span>
+          <h2>Comprueba si distingues lo esencial</h2>
+          <p>Contesta sin mirar la teoría. La explicación aparece tras cada respuesta.</p>
+          <div class="quiz" id="quiz" aria-live="polite">
+            <article class="question" data-answer="b"><p>1. Una persona es interceptada en el mar cuando intentaba llegar a nado a Ceuta. ¿Qué figura procede según la STS 814/2026?</p><div class="answers"><button data-value="a">A. Rechazo en frontera de la DA 10.ª.</button><button data-value="b">B. Devolución del art. 58.3 LOEX.</button><button data-value="c">C. Expulsión inmediata sin trámite.</button></div><div class="feedback">Correcta: procede la devolución; la interceptación marítima no permite aplicar el rechazo en frontera.</div></article>
+            <article class="question" data-answer="c"><p>2. ¿Cuál de estas afirmaciones es correcta sobre la situación de interés para la Seguridad Nacional?</p><div class="answers"><button data-value="a">A. Suspende automáticamente derechos fundamentales.</button><button data-value="b">B. Es idéntica al estado de excepción.</button><button data-value="c">C. Se afronta con medios ordinarios y coordinación reforzada.</button></div><div class="feedback">Correcta: la Ley 36/2015 mantiene los poderes ordinarios y no permite suspender derechos fundamentales.</div></article>
+            <article class="question" data-answer="a"><p>3. En una situación de contingencia migratoria extraordinaria de menores, el traslado debe producirse desde la inscripción en el Registro MENA en:</p><div class="answers"><button data-value="a">A. 15 días naturales.</button><button data-value="b">B. 30 días hábiles.</button><button data-value="c">C. 60 días.</button></div><div class="feedback">Correcta: el plazo máximo es de 15 días naturales desde la inscripción.</div></article>
+            <article class="question" data-answer="b"><p>4. ¿Qué medida exige autorización judicial y puede durar como máximo 60 días?</p><div class="answers"><button data-value="a">A. Detención cautelar.</button><button data-value="b">B. Internamiento en CIE.</button><button data-value="c">C. Presentación periódica.</button></div><div class="feedback">Correcta: el CIE es una medida cautelar judicial, no una pena, y tiene un límite máximo de 60 días.</div></article>
+            <article class="question" data-answer="c"><p>5. La formalización de una solicitud de protección internacional por una persona sujeta a devolución implica:</p><div class="answers"><button data-value="a">A. Concesión automática de asilo.</button><button data-value="b">B. Expulsión inmediata por entrada irregular.</button><button data-value="c">C. Suspensión de la devolución hasta decidir la inadmisión a trámite.</button></div><div class="feedback">Correcta: no supone concesión automática, pero paraliza la devolución en los términos de la LOEX.</div></article>
+          </div>
+        </section>
+
+        <section id="repaso">
+          <span class="section-label">Repaso final</span>
+          <h2>Las diez frases que debes poder decir sin dudar</h2>
+          <ol>
+            <li>Los nacionales marroquíes del caso se rigen, en general, por la LOEX y su Reglamento, no por el régimen comunitario.</li>
+            <li>Denegación de entrada, rechazo en frontera, devolución y expulsión son figuras diferentes.</li>
+            <li>La DA 10.ª solo opera en Ceuta y Melilla y exige detección en la línea fronteriza superando elementos materiales de contención.</li>
+            <li>La entrada a nado interceptada en el mar se encauza mediante devolución, no rechazo en frontera.</li>
+            <li>La devolución no requiere expediente de expulsión; la expulsión sí exige expediente y proporcionalidad.</li>
+            <li>Una solicitud de protección internacional introduce garantías y paraliza la devolución en los términos legales.</li>
+            <li>El CIE es cautelar, judicial y tiene un máximo de 60 días; no es penitenciario.</li>
+            <li>Un MENA recibe protección inmediata, intervención fiscal y tratamiento individualizado; no cabe una devolución automática colectiva.</li>
+            <li>La contingencia migratoria extraordinaria de menores se activa al triplicar la capacidad ordinaria del sistema de protección.</li>
+            <li>La situación de interés para la Seguridad Nacional coordina recursos ordinarios y no suspende derechos fundamentales.</li>
+          </ol>
+        </section>
+
+        <section id="fuentes">
+          <span class="section-label">Normativa y fuentes</span>
+          <h2>Fuentes para revisar la literalidad</h2>
+          <ul class="source-list">
+            <li><a href="https://www.boe.es/eli/es/lo/2000/01/11/4/con/20201222" target="_blank" rel="noopener">Ley Orgánica 4/2000 de extranjería</a>.</li>
+            <li><a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2024-24099" target="_blank" rel="noopener">RD 1155/2024, Reglamento de Extranjería</a>.</li>
+            <li><a href="https://tfextranjeria.es/publicacion/sentencia-del-tribunal-supremo-814-2026-de-29-de-junio-de-2026-las-personas-que-entran-a-nado-a-espana-se-les-debe-aplicar-un-expediente-de-devolucion-no-un-rechazo-en-frontera/" target="_blank" rel="noopener">STS 814/2026, de 29 de junio</a>.</li>
+            <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-10389" target="_blank" rel="noopener">Ley 36/2015 de Seguridad Nacional</a> y <a href="https://www.boe.es/eli/es/rd/2026/08/25/681/con" target="_blank" rel="noopener">RD 681/2026, Ceuta</a>.</li>
+            <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2025-15229" target="_blank" rel="noopener">RD 658/2025 sobre contingencia migratoria de menores</a>.</li>
+            <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-1986-6859" target="_blank" rel="noopener">LO 2/1986 de Fuerzas y Cuerpos de Seguridad</a>.</li>
+          </ul>
+        </section>
+      </div>
+
+      <aside aria-label="Panel de seguimiento del estudio">
+        <div class="aside-card">
+          <h3>Control de repaso</h3>
+          <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progressBar"></div></div>
+          <span class="progress-text" id="progressText">0 de 7 bloques repasados</span>
+          <ul class="checklist" id="checklist">
+            <li><input id="c1" type="checkbox"><label for="c1">Régimen general vs. comunitario</label></li>
+            <li><input id="c2" type="checkbox"><label for="c2">Cuatro figuras de salida/retorno</label></li>
+            <li><input id="c3" type="checkbox"><label for="c3">Expulsión, preferente y CIE</label></li>
+            <li><input id="c4" type="checkbox"><label for="c4">Asilo en frontera y reexamen</label></li>
+            <li><input id="c5" type="checkbox"><label for="c5">MENA y repatriación</label></li>
+            <li><input id="c6" type="checkbox"><label for="c6">Contingencia de menores</label></li>
+            <li><input id="c7" type="checkbox"><label for="c7">Seguridad nacional y competencias</label></li>
+          </ul>
+          <button class="reset" id="resetProgress" type="button">Reiniciar control</button>
+        </div>
+        <div class="aside-card">
+          <h3>Datos de actualidad</h3>
+          <p class="text-small">Como complemento, no como sustituto de la norma:</p>
+          <ul>
+            <li>30–31 julio: entrada masiva.</li>
+            <li>72.000: cifra de Interior.</li>
+            <li>1.612: menores identificados a 1 de septiembre.</li>
+            <li>31 diciembre: duración inicial del RD 681/2026.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <footer><div class="wrap">Actualizada el 4 de septiembre de 2026. Comprueba siempre el temario oficial de tu convocatoria si este difiere de estas normas o de sus actualizaciones.</div></footer>
+  <script>
+    (() => {
+      const key = 'ceutaStudyProgress';
+      const checks = [...document.querySelectorAll('#checklist input')];
+      const bar = document.getElementById('progressBar');
+      const text = document.getElementById('progressText');
+      const update = () => {
+        const done = checks.filter(check => check.checked).length;
+        bar.style.width = `${done / checks.length * 100}%`;
+        text.textContent = `${done} de ${checks.length} bloques repasados`;
+        localStorage.setItem(key, JSON.stringify(checks.map(check => check.checked)));
+      };
+      try {
+        const saved = JSON.parse(localStorage.getItem(key));
+        if (Array.isArray(saved)) checks.forEach((check, index) => { check.checked = Boolean(saved[index]); });
+      } catch (_) {}
+      checks.forEach(check => check.addEventListener('change', update));
+      document.getElementById('resetProgress').addEventListener('click', () => { checks.forEach(check => { check.checked = false; }); update(); });
+      update();
+
+      document.querySelectorAll('.question').forEach(question => {
+        const answer = question.dataset.answer;
+        const feedback = question.querySelector('.feedback');
+        question.querySelectorAll('button[data-value]').forEach(button => {
+          button.addEventListener('click', () => {
+            question.querySelectorAll('button[data-value]').forEach(option => {
+              option.disabled = true;
+              if (option.dataset.value === answer) option.classList.add('correct');
+            });
+            if (button.dataset.value !== answer) button.classList.add('incorrect');
+            feedback.classList.add('show');
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
